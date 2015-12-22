@@ -8,7 +8,7 @@ mine(Secret) -> mine(Secret, 1).
 
 mine(Secret, Coin_key) -> mine(Secret, Coin_key, secret_key(Secret, Coin_key)).
 
-mine(_, Coin_key, [$0,$0,$0,$0,$0|_]) -> Coin_key;
+mine(_, Coin_key, [$0,$0,$0,$0,$0,$0|_]) -> Coin_key;
 mine(Secret, Coin_key, _) -> 
     New_coin_key = Coin_key + 1,
     mine(Secret, New_coin_key, secret_key(Secret, New_coin_key)).
