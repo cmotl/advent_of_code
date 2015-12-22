@@ -1,4 +1,6 @@
 -module(advent_coin).
--export([mine/0]).
+-export([mine/1]).
 
-mine() -> mine.
+mine(Secret) -> Secret.
+
+
