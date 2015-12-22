@@ -2,5 +2,5 @@
 -include_lib("eunit/include/eunit.hrl").
 
 mine_test() ->
-    ?assertEqual("abcdef1", advent_coin:mine("abcdef")),
-    ?assertEqual("pqrstuv1", advent_coin:mine("pqrstuv")).
+    ?assertEqual(609043, advent_coin:mine("abcdef", 609040)),
+    ?assertEqual(1048970, advent_coin:mine("pqrstuv", 1048960)).
