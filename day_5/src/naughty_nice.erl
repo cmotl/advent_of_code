@@ -16,4 +16,10 @@ contains_three_vowels([X|Tail], Vowel_count) ->
         false -> contains_three_vowels(Tail, Vowel_count) 
     end.
 
-contains_naughty_sequences(_) -> false.
+contains_naughty_sequences([]) -> false;
+contains_naughty_sequences([_|[]]) -> false;
+contains_naughty_sequences([X,Y|Tail]) -> 
+    case lists:member([X,Y], ["ab", "cd", "pq", "xy"]) of
+        true -> true;
+        false -> contains_naughty_sequences([Y|Tail])
+    end.    

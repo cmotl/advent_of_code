@@ -25,4 +25,16 @@ three_vowels_test() ->
     ?assertEqual(true, naughty_nice:contains_three_vowels("abcdfghjklmnpqrstvwxyzaa")).
 
 contains_naughty_sequences_test() ->
-    ?assertEqual(false, naughty_nice:contains_naughty_sequences("")).
+    ?assertEqual(false, naughty_nice:contains_naughty_sequences("")),
+    ?assertEqual(false, naughty_nice:contains_naughty_sequences("a")),
+    ?assertEqual(false, naughty_nice:contains_naughty_sequences("aa")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("ab")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("cd")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("pq")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("xy")),
+    ?assertEqual(false, naughty_nice:contains_naughty_sequences("acefghijklmnoprstuvwxz")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("abcefghijklmnoprstuvwxz")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("acdefghijklmnoprstuvwxz")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("acefghijklmnopqrstuvwxz")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("acefghijklmnoprstuvwxyz")),
+    ?assertEqual(true, naughty_nice:contains_naughty_sequences("abcdefghijklmnopqrstuvwxyz")).
