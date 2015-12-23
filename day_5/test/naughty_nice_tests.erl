@@ -38,3 +38,10 @@ contains_naughty_sequences_test() ->
     ?assertEqual(true, naughty_nice:contains_naughty_sequences("acefghijklmnopqrstuvwxz")),
     ?assertEqual(true, naughty_nice:contains_naughty_sequences("acefghijklmnoprstuvwxyz")),
     ?assertEqual(true, naughty_nice:contains_naughty_sequences("abcdefghijklmnopqrstuvwxyz")).
+
+naughty_or_nice_test() ->
+    ?assertEqual({nice}, naughty_nice:naughty_or_nice("ugknbfddgicrmopn")),
+    ?assertEqual({nice}, naughty_nice:naughty_or_nice("aaa")),
+    ?assertEqual({naughty}, naughty_nice:naughty_or_nice("jchzalrnumimnmhp")),
+    ?assertEqual({naughty}, naughty_nice:naughty_or_nice("haegwjzuvuyypxyu")),
+    ?assertEqual({naughty}, naughty_nice:naughty_or_nice("dvszwmarrgswjxmb")).

@@ -1,5 +1,5 @@
 -module(naughty_nice).
--export([contains_duplicate_letters/1, contains_three_vowels/1, contains_naughty_sequences/1]).
+-export([contains_duplicate_letters/1, contains_three_vowels/1, contains_naughty_sequences/1, naughty_or_nice/1]).
 
 contains_duplicate_letters([]) -> false;
 contains_duplicate_letters([_|[]]) -> false;
@@ -23,3 +23,12 @@ contains_naughty_sequences([X,Y|Tail]) ->
         true -> true;
         false -> contains_naughty_sequences([Y|Tail])
     end.    
+
+naughty_or_nice(String) ->
+    Three_vowels = contains_three_vowels(String),
+    Duplicate_letters = contains_duplicate_letters(String),
+    Naughty_sequences = contains_naughty_sequences(String),
+    case {Three_vowels, Duplicate_letters, Naughty_sequences} of
+        {true, true, false} -> {nice};
+        _ -> {naughty}
+    end.
