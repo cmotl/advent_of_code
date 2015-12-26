@@ -13,5 +13,6 @@ create_strand_test() ->
     ?assertEqual(4, dict:size(lights:create_strand(1,1))),
     ?assertEqual(6, dict:size(lights:create_strand(2,1))),
     ?assertEqual(9, dict:size(lights:create_strand(2,2))),
-    ?assertEqual(100, dict:size(lights:create_strand(9,9))).
+    ?assertEqual(100, dict:size(lights:create_strand(9,9))),
+    ?assertEqual(10000, dict:size(lights:create_strand(99,99))).
 

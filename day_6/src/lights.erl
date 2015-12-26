@@ -19,6 +19,7 @@ create_strand({Rows, Columns} = Dimensions, {Current_row, Current_column}, Stran
     when Current_column > Columns, Current_row =< Rows -> 
     create_strand(Dimensions, {Current_row+1, 0}, Strand);
 create_strand(Dimensions, {Current_row, Current_column}, Strand) -> 
-    New_strand = Strand:append({Current_row, Current_column}, light_bulb:plug_in()),
+    New_strand = Strand:append({Current_row, Current_column}, off),
     create_strand(Dimensions, {Current_row, Current_column + 1}, New_strand).
     
+
