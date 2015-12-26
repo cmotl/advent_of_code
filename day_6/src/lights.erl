@@ -20,8 +20,5 @@ create_strand({Rows, Columns} = Dimensions, {Current_row, Current_column}, Stran
     create_strand(Dimensions, {Current_row+1, 0}, Strand);
 create_strand(Dimensions, {Current_row, Current_column}, Strand) -> 
     New_strand = Strand:append({Current_row, Current_column}, light_bulb:plug_in()),
-    Printer = fun(E) -> io:format("E: ~p~n",[E]) end,
-    lists:foreach(Printer,dict:to_list(New_strand)),
-    io:format("~n"), 
     create_strand(Dimensions, {Current_row, Current_column + 1}, New_strand).
     
